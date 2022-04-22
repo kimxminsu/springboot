@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.minsu.mybatis.dao.MinsuDao">
+    <resultMap id="userMap" type="com.minsu.mybatis.model.MinsuDto">
+        <result column="usercode" property="code"/>
+        <result column="username" property="name"/>
+    </resultMap>
+
+    <select id="selectList" parameterType="com.minsu.mybatis.model.MinsuDto" resultMap="userMap">
+        SELECT USERCODE, USERNAME
+        FROM MINSU
+    </select>
+</mapper>
